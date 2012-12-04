@@ -1,0 +1,18 @@
+package nl.realworks.hudson.junitdiff;
+
+import hudson.Plugin;
+import hudson.tasks.BuildStep;
+
+/**
+ * @version $Id$
+ */
+public class JunitDiffPlugin extends Plugin {
+
+	public static final String DISPLAY_NAME = "JUnit Diff";
+
+    @Override
+	public void start() throws Exception {
+        BuildStep.PUBLISHERS.addRecorder(JunitDiffPublisher.DESCRIPTOR);
+    }
+
+}
